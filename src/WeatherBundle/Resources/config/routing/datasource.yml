@@ -1,0 +1,24 @@
+datasource_index:
+    path:     /
+    defaults: { _controller: "WeatherBundle:DataSource:index" }
+    methods:  GET
+
+datasource_show:
+    path:     /{id}/show
+    defaults: { _controller: "WeatherBundle:DataSource:show" }
+    methods:  GET
+
+datasource_new:
+    path:     /new
+    defaults: { _controller: "WeatherBundle:DataSource:new" }
+    methods:  [GET, POST]
+
+datasource_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WeatherBundle:DataSource:edit" }
+    methods:  [GET, POST]
+
+datasource_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WeatherBundle:DataSource:delete" }
+    methods:  DELETE

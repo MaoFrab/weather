@@ -1,0 +1,29 @@
+city_index:
+    path:     /
+    defaults: { _controller: "WeatherBundle:City:index" }
+    methods:  GET
+
+city_show:
+    path:     /{id}/show
+    defaults: { _controller: "WeatherBundle:City:show" }
+    methods:  GET
+
+city_new:
+    path:     /new
+    defaults: { _controller: "WeatherBundle:City:new" }
+    methods:  [GET, POST]
+
+city_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WeatherBundle:City:edit" }
+    methods:  [GET, POST]
+
+city_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WeatherBundle:City:delete" }
+    methods:  DELETE
+
+city_add_data_source:
+    path:     /{id}/add/data_source
+    defaults: { _controller: "WeatherBundle:City:addDataSource" }
+    methods:  [GET, POST]

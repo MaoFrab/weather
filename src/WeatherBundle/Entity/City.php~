@@ -1,0 +1,147 @@
+<?php
+
+namespace WeatherBundle\Entity;
+
+/**
+ * City
+ */
+class City
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @var integer
+     */
+    private $population;
+
+    /**
+     * @var array
+     */
+    private $cityLocation;
+
+    /**
+     * @var \WeatherBundle\Entity\DataSource
+     */
+    private $dataSource;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return City
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set population
+     *
+     * @param integer $population
+     *
+     * @return City
+     */
+    public function setPopulation($population)
+    {
+        $this->population = $population;
+
+        return $this;
+    }
+
+    /**
+     * Get population
+     *
+     * @return integer
+     */
+    public function getPopulation()
+    {
+        return $this->population;
+    }
+
+    /**
+     * Set cityLocation
+     *
+     * @param array $cityLocation
+     *
+     * @return City
+     */
+    public function setCityLocation($cityLocation)
+    {
+        $this->cityLocation = $cityLocation;
+
+        return $this;
+    }
+
+    /**
+     * Get cityLocation
+     *
+     * @return array
+     */
+    public function getCityLocation()
+    {
+        return $this->cityLocation;
+    }
+
+    /**
+     * Set dataSource
+     *
+     * @param \WeatherBundle\Entity\DataSource $dataSource
+     *
+     * @return City
+     */
+    public function setDataSource(\WeatherBundle\Entity\DataSource $dataSource = null)
+    {
+        $this->dataSource = $dataSource;
+
+        return $this;
+    }
+
+    /**
+     * Get dataSource
+     *
+     * @return \WeatherBundle\Entity\DataSource
+     */
+    public function getDataSource()
+    {
+        return $this->dataSource;
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
+}
+

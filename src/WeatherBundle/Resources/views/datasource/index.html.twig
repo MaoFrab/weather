@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>DataSource list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Location</th>
+                <th>Name</th>
+                <th>Temperature</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for dataSource in dataSources %}
+            <tr>
+                <td><a href="{{ path('datasource_show', { 'id': dataSource.id }) }}">{{ dataSource.id }}</a></td>
+                <td>{{ dataSource.location[0] }} {{ dataSource.location[1] }}</td>
+                <td>{{ dataSource.name }}</td>
+                <td>{{ dataSource.temperature }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('datasource_show', { 'id': dataSource.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('datasource_edit', { 'id': dataSource.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('datasource_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

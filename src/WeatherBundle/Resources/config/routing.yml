@@ -1,0 +1,7 @@
+weather_datasource:
+    resource: "@WeatherBundle/Resources/config/routing/datasource.yml"
+    prefix:   /datasource
+
+weather_homepage:
+    resource: "@WeatherBundle/Resources/config/routing/city.yml"
+    prefix:   /

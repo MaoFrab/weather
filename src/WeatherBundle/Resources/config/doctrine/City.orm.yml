@@ -1,0 +1,27 @@
+WeatherBundle\Entity\City:
+    type: entity
+    table: null
+    repositoryClass: WeatherBundle\Repository\CityRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '50'
+            unique: true
+        population:
+            type: integer
+        longitude:
+            type: float
+        latitude:
+            type: float
+
+    manyToOne:
+        dataSource:
+            targetEntity: DataSource
+            inverserBy: cities
+    lifecycleCallbacks: {  }

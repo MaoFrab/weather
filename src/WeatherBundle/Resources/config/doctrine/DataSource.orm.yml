@@ -1,0 +1,28 @@
+WeatherBundle\Entity\DataSource:
+    type: entity
+    table: null
+    repositoryClass: WeatherBundle\Repository\DataSourceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '255'
+            unique: true
+        temperature:
+            type: string
+            length: '100'
+        longitude:
+            type: float
+        latitude:
+            type: float
+
+    oneToMany:
+        cities:
+            targetEntity: City
+            mappedBy: dataSource
+    lifecycleCallbacks: {  }
