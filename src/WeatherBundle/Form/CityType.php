@@ -25,9 +25,9 @@ class CityType extends AbstractType
             ->add('dataSource', EntityType::class, array(
                 'class' => 'WeatherBundle:dataSource',
                 'query_builder' => function (DataSourceRepository $er) {
-                    return $er->createQueryBuilder('d')
-                        ->findBetweenLatLng();
-                        //->orderBy('d.name', 'ASC');
+                    return $ds = $er->createQueryBuilder('d')
+                        ->w
+                            ->orderBy('d.name', 'ASC');
                 }
             ))
         ;

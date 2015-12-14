@@ -12,9 +12,14 @@ class DataSourceRepository extends \Doctrine\ORM\EntityRepository
 {
     public function findBetweenLatLng()
     {
-        return $this->getEntityManager()
-            ->createQuery(
-                "SELECT ds FROM dataSource as ds ORDER BY ds.name ASC")
-            ->getResult();
+        return $ds = $this->getEntityManager()
+                    ->createQueryBuilder('ds')
+            ->select()
+            ->where('ds.id < 2');
+
+            //->getResult();
+
+        //echo dump($ds->getResult());
+        //exit;
     }
 }

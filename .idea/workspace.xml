@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="196e5537-d843-4cc2-989c-93a4db831415" name="Default" comment="" />
+    <list default="true" id="196e5537-d843-4cc2-989c-93a4db831415" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WeatherBundle/Form/CityType.php" afterPath="$PROJECT_DIR$/src/WeatherBundle/Form/CityType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WeatherBundle/Repository/DataSourceRepository.php" afterPath="$PROJECT_DIR$/src/WeatherBundle/Repository/DataSourceRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    </list>
     <ignored path="weather.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -22,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CityController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CityController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WeatherBundle/Controller/CityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3236715">
-              <caret line="117" column="40" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="40" />
+            <state vertical-scroll-proportion="-10.875">
+              <caret line="121" column="33" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="33" />
               <folding>
                 <element signature="e#44#89#0#PHP" expanded="true" />
               </folding>
@@ -34,12 +38,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CityType.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CityType.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WeatherBundle/Form/CityType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.375">
-              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-              <folding />
+            <state vertical-scroll-proportion="0.46859902">
+              <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+              <folding>
+                <element signature="e#38#78#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,12 +53,9 @@
       <file leaf-file-name="DataSourceRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WeatherBundle/Repository/DataSourceRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.25">
-              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-              <folding>
-                <marker date="1450040820000" expanded="true" signature="376:428" placeholder="SELECT p FRO..AppBundle..." />
-                <marker date="1450040820000" expanded="true" signature="376:456" placeholder="SELECT p FRO..AppBundle..." />
-              </folding>
+            <state vertical-scroll-proportion="-10.625">
+              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -68,6 +71,9 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -86,10 +92,10 @@
         <option value="$PROJECT_DIR$/src/WeatherBundle/Resources/views/city/show.html.twig" />
         <option value="$PROJECT_DIR$/src/WeatherBundle/Resources/config/routing/city.yml" />
         <option value="$PROJECT_DIR$/src/WeatherBundle/Resources/views/city/add_data_source.html.twig" />
-        <option value="$PROJECT_DIR$/src/WeatherBundle/Controller/CityController.php" />
         <option value="$PROJECT_DIR$/src/WeatherBundle/Resources/views/city/index.html.twig" />
         <option value="$PROJECT_DIR$/src/WeatherBundle/Entity/City.php" />
         <option value="$PROJECT_DIR$/src/WeatherBundle/Entity/DataSource.php" />
+        <option value="$PROJECT_DIR$/src/WeatherBundle/Controller/CityController.php" />
         <option value="$PROJECT_DIR$/src/WeatherBundle/Repository/DataSourceRepository.php" />
         <option value="$PROJECT_DIR$/src/WeatherBundle/Form/CityType.php" />
       </list>
@@ -111,7 +117,7 @@
     <option name="width" value="1280" />
     <option name="height" value="742" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -637,14 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WeatherBundle/Entity/City.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5">
-          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WeatherBundle/Resources/views/city/add_data_source.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12077295">
@@ -653,31 +651,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WeatherBundle/Repository/DataSourceRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/WeatherBundle/Entity/City.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding>
-            <marker date="1450040820000" expanded="true" signature="376:428" placeholder="SELECT p FRO..AppBundle..." />
-            <marker date="1450040820000" expanded="true" signature="376:456" placeholder="SELECT p FRO..AppBundle..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WeatherBundle/Form/CityType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WeatherBundle/Controller/CityController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3236715">
-          <caret line="117" column="40" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="40" />
+        <state vertical-scroll-proportion="-10.875">
+          <caret line="121" column="33" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="33" />
           <folding>
             <element signature="e#44#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WeatherBundle/Repository/DataSourceRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.625">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WeatherBundle/Form/CityType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46859902">
+          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <folding>
+            <element signature="e#38#78#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
