@@ -15,7 +15,7 @@
         </thead>
         <tbody>
         {% for city in cities %}
-            <>
+            
                 <td><a href="{{ path('city_show', { 'id': city.id }) }}">{{ city.id }}</a></td>
                 <td>{{ city.name }}</td>
                 <td>{{ city.population }}</td>
