@@ -86,6 +86,8 @@ class CityController extends Controller
 
             return $this->redirectToRoute('city_edit', array('id' => $city->getId()));
         }
+        //dump($editForm->createView());
+        //exit;
 
         return $this->render('WeatherBundle:City:edit.html.twig', array(
             'city' => $city,

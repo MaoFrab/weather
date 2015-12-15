@@ -16,21 +16,29 @@ class CityType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $longitude = $options['data']->getLongitude() ? $options['data']->getLongitude() : 0;
+        $latitude = $options['data']->getLatitude() ? $options['data']->getLatitude() : 0;
+
         $builder
             ->add('name')
             ->add('population')
             ->add('longitude')
             ->add('latitude')
-            ->add('dataSource') //WHERE lat BETWEEN lat1 AND lat 2 AND lng BETWEEN lng1 AND lng2
+            ->add('dataSource')
             ->add('dataSource', EntityType::class, array(
                 'class' => 'WeatherBundle:dataSource',
-                'query_builder' => function (DataSourceRepository $er) {
-                    return $ds = $er->createQueryBuilder('d')
-                        ->w
-                            ->orderBy('d.name', 'ASC');
+                'query_builder' => function (DataSourceRepository $er) use ($longitude, $latitude) {
+                    return $ds = $er->createQueryBuilder('ds')
+                        ->where(" SQRT((($longitude - ds.longitude)*($longitude - ds.longitude))
+                         +
+                          (($latitude - ds.latitude)*($latitude - ds.latitude))) <= 10")
+                            ->orderBy(' ds.name', 'ASC');
                 }
             ))
         ;
+
+        //dump($options['data']->getLongitude());
+        //exit;
     }
     
     /**
