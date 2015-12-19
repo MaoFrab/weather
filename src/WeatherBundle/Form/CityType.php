@@ -23,8 +23,7 @@ class CityType extends AbstractType
             ->add('name')
             ->add('population')
             ->add('longitude')
-            ->add('latitude')
-            ->add('dataSource');
+            ->add('latitude');
 
 
         if(!empty($options['data']->getLongitude()) and !empty($options['data']->getLatitude()))
