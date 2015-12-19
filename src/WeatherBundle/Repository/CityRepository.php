@@ -10,4 +10,16 @@ namespace WeatherBundle\Repository;
  */
 class CityRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getCitiesByName($name)
+    {
+        $queryBuilder = $this->createQueryBuilder('c');
+        $queryBuilder->select('c')
+            ->where("c.name LIKE :name")
+            ->setParameter(":name", $name);
+
+
+
+        return $queryBuilder->getQuery()->getResult();
+
+    }
 }

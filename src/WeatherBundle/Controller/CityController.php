@@ -140,4 +140,26 @@ class CityController extends Controller
             'delete_form' => $deleteForm->createView()
         ));
     }
+
+    public function searchAction()
+    {
+        $request = $this->getRequest();
+        $data = $request->query->get('search');
+
+        //dump($data);
+        //exit;
+
+
+        $em = $this->getDoctrine()->getManager();
+        $cities = $em->getRepository('WeatherBundle:City')->getCitiesByName($data);
+
+        /*if(empty($cities))
+            $error = "Результатов по запросу {$data} нет";*/
+
+
+        return $this->render('WeatherBundle:City:index.html.twig', array(
+            'cities' => $cities,
+            //'error' => ($error ? $error : null)
+        ));
+    }
 }

@@ -27,3 +27,8 @@ city_add_data_source:
     path:     /{id}/add/data_source
     defaults: { _controller: "WeatherBundle:City:addDataSource" }
     methods:  [GET, POST]
+
+city_search:
+    path:     /city-search/
+    defaults: { _controller: "WeatherBundle:City:search" }
+    methods:  [GET]
