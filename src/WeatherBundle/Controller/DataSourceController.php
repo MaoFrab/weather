@@ -63,7 +63,7 @@ class DataSourceController extends Controller
         $cities = $dataSource->getCities()->getValues();
 
         return $this->render('WeatherBundle:DataSource:show.html.twig', array(
-            'dataSource' => $dataSource,
+            'datasource' => $dataSource,
             'cities' => $cities,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -88,7 +88,7 @@ class DataSourceController extends Controller
         }
 
         return $this->render('WeatherBundle:DataSource:edit.html.twig', array(
-            'dataSource' => $dataSource,
+            'datasource' => $dataSource,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));

@@ -23,9 +23,11 @@ class CityController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $cities = $em->getRepository('WeatherBundle:City')->findAll();
+        $datasource = $em->getRepository('WeatherBundle:DataSource')->findAll();
 
         return $this->render('WeatherBundle:City:index.html.twig', array(
             'cities' => $cities,
+            'datasources' => $datasource,
         ));
     }
 
@@ -40,8 +42,6 @@ class CityController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            echo dump($city);
             $em = $this->getDoctrine()->getManager();
             $em->persist($city);
             $em->flush();
@@ -63,9 +63,6 @@ class CityController extends Controller
     {
         $deleteForm = $this->createDeleteForm($city);
         $dataSource = $city->getDataSource();
-
-        /*dump($city);
-        exit;*/
 
         return $this->render('WeatherBundle:City:show.html.twig', array(
             'city' => $city,
@@ -151,10 +148,6 @@ class CityController extends Controller
         $request = $this->getRequest();
         $data = $request->query->get('search');
 
-        //dump($data);
-        //exit;
-
-
         $em = $this->getDoctrine()->getManager();
         $cities = $em->getRepository('WeatherBundle:City')->getCitiesByName($data);
 
@@ -164,6 +157,7 @@ class CityController extends Controller
 
         return $this->render('WeatherBundle:City:index.html.twig', array(
             'cities' => $cities,
+            'datasources' => null,
             //'error' => ($error ? $error : null)
         ));
     }
