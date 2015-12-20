@@ -7,23 +7,97 @@
         </h3>
     </h1>
 
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#city">Города</a></li>
+        <li><a data-toggle="tab" href="#datasource">Источники данных</a></li>
+    </ul>
 
-    <div class = "row text-center">
-        <div class="col-md-4 text-left">
-            <a href="{{ path('city_new') }}">Добавить город</a>
-        </div>
-
-        <div class="col-md-8 text-right">
-           <form class="navbar-form" role="search" id="nav-search-form" method="get" action="{{ path('city_search') }}">
-                <div class="input-group">
-                    <input type="search" class="form-control" placeholder="Поиск города" name ="search">
+    <div class="tab-content">
+        <div id="city" class="tab-pane fade in active">
+            <div class = "row text-center">
+                <div class="col-md-4 text-left">
+                    <a href="{{ path('city_new') }}">Добавить город</a>
                 </div>
-            </form>
+
+                <div class="col-md-8 text-right">
+                    <form class="navbar-form" role="search" id="nav-search-form" method="get" action="{{ path('city_search') }}">
+                        <div class="input-group">
+                            <input type="search" class="form-control" placeholder="Поиск города" name ="search">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class = "row" style="background: rgba(89, 213, 241, 0.18); border-radius: 6px;">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Название</th>
+                        <th>Население</th>
+                        <th>Широта</th>
+                        <th>Долгота</th>
+                        <th>Действия</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for city in cities %}
+                        <tr>
+                            <td>{{ city.id }}</td>
+                            <td><a href="{{ path('city_show', { 'id': city.id }) }}">{{ city.name }}</a></td>
+                            <td>{{ city.population }}</td>
+                            <td>{{ city.latitude}} </td>
+                            <td>{{ city.longitude }} </td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('city_show', { 'id': city.id }) }}">Показать</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('city_edit', { 'id': city.id }) }}">Редактировать</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+
+
         </div>
+
+
+
+
+
+        <div id="datasource" class="tab-pane fade">
+            <div class = "row text-center">
+                asdasdas
+            </div>
+        </div>
+
     </div>
 
 
-    <div class = "row" style="background: rgba(89, 213, 241, 0.18); border-radius: 6px;">
+
+
+
+
+
+
+
+
+{# sasdasdasd s#}
+
+
+
+
+
+
+    {#<div class = "row" style="background: rgba(89, 213, 241, 0.18); border-radius: 6px;">
         <table class="table table-hover">
             <thead>
             <tr>
@@ -59,5 +133,5 @@
 
             </tbody>
         </table>
-    <div>
+    <div>#}
 {% endblock %}
