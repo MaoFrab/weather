@@ -62,9 +62,14 @@ class CityController extends Controller
     public function showAction(City $city)
     {
         $deleteForm = $this->createDeleteForm($city);
+        $dataSource = $city->getDataSource();
+
+        /*dump($city);
+        exit;*/
 
         return $this->render('WeatherBundle:City:show.html.twig', array(
             'city' => $city,
+            'data_source' => $dataSource,
             'delete_form' => $deleteForm->createView(),
         ));
     }
