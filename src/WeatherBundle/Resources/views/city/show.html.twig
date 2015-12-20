@@ -1,11 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="row">
-        <div class="col-md-3">
-            Феноменальный город <b>{{ city.name }}</b>
-        </div>
-    </div>
+
+    <h1>Феноменальный город <b>{{ city.name }}</b></h1>
 
     <div class = "row text-center">
         <div class="col-md-4 text-left">
@@ -31,12 +28,8 @@
         <div class = "col-md-6">
             <table class="table table-hover">
                 <tbody>
-                    <tr>
-                        <td>Id</td>
-                        <td>{{ city.id }}</td>
-                    </tr>
-                    <tr>
-                        <td>Название</td>
+                    <tr class="lead">
+                        <td>Город</td>
                         <td>{{ city.name }}</td>
                     </tr>
                     <tr>
@@ -53,6 +46,33 @@
                     </tr>
                 </tbody>
             </table>
+            {% if(data_source) %}
+            <table class="table table-hover">
+                <tbody>
+
+                    <tr class="lead">
+                        <td>Источник данных</td>
+                        <td>{{ data_source.name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Температура</td>
+                        <td>{{ data_source.temperature }}</td>
+                    </tr>
+                    <tr>
+                        <td>Долгота</td>
+                        <td>{{ data_source.latitude }} </td>
+                    </tr>
+                    <tr>
+                        <td>Широта</td>
+                        <td>{{ data_source.longitude }} </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            {% else %}
+                <a class="" href="{{ path('city_edit', { 'id': city.id }) }}">Добавить источник данных</a>
+            {% endif %}
+
 
         </div>
         <div class="col-md-4"> {#.col-md-offset-4#}
@@ -61,8 +81,8 @@
     </div>
 
     <div calss="row">
-        <a style="float: right;" href="{{ path('city_index') }}">Back to the list</a>
-        <a class="text-right" href="{{ path('city_edit', { 'id': city.id }) }}">Edit</a>
+        <a style="float: right;" href="{{ path('city_index') }}">Вернуться к списку</a>
+        <a class="text-right" href="{{ path('city_edit', { 'id': city.id }) }}">Редактировать</a>
     </div>
 
 
