@@ -29,6 +29,7 @@ class CityType extends AbstractType
         if(!empty($options['data']->getLongitude()) and !empty($options['data']->getLatitude()))
             $builder
             ->add('dataSource', EntityType::class, array(
+                'label' => 'Источник данных',
                 'class' => 'WeatherBundle:dataSource',
                 'query_builder' => function (DataSourceRepository $er) use ($longitude, $latitude) {
                     return $ds = $er->createQueryBuilder('ds')
