@@ -29,8 +29,8 @@
             <table class="table table-hover">
                 <tbody>
                     <tr class="lead">
-                        <td>Город</td>
-                        <td>{{ city.name }}</td>
+                        <th>Город</th>
+                        <th>{{ city.name }}</th>
                     </tr>
                     <tr>
                         <td>Население</td>
@@ -46,17 +46,16 @@
                     </tr>
                 </tbody>
             </table>
-            {% if(data_source) %}
+            {% if data_source is not empty %}
             <table class="table table-hover">
                 <tbody>
-
                     <tr class="lead">
-                        <td>Источник данных</td>
-                        <td>{{ data_source.name }}</td>
+                        <th>Источник данных</th>
+                        <th><a href="{{ path('datasource_show', { 'id': data_source.id }) }}">{{ data_source.name }}</a></th>
                     </tr>
                     <tr>
                         <td>Температура</td>
-                        <td>{{ data_source.temperature }}</td>
+                        <td>{{ data_source.temperature }} °C</td>
                     </tr>
                     <tr>
                         <td>Долгота</td>
@@ -75,7 +74,7 @@
 
 
         </div>
-        <div class="col-md-4"> {#.col-md-offset-4#}
+        <div class="text-right" style="margin-right: 2%">
             <img class = "img-rounded" alt="" locale="ru" src="//static-maps.yandex.ru/1.x/?ll={{ city.latitude }},{{ city.longitude }}&amp;size=450,450&amp;z=9&amp;l=map&amp;pt={{ city.latitude }},{{ city.longitude }},pmwtm1~{{ city.latitude }},{{ city.longitude }},org">
         </div>
     </div>

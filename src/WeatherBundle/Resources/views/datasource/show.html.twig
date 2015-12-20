@@ -1,52 +1,70 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>DataSource</h1>
+    <h1>Феноменальный город <b>{{ datasource.name }}</b></h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ dataSource.id }}</td>
-            </tr>
-            <tr>
-                <th>Location</th>
-                <td>{{ dataSource.longitude }}</td>
-            </tr>
-            <tr>
-                <th>Location</th>
-                <td>{{ dataSource.latitude }} </td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ dataSource.name }}</td>
-            </tr>
-            <tr>
-                <th>Temperature</th>
-                <td>{{ dataSource.temperature }}</td>
-            </tr>
+    <div class = "row text-center">
+        <div class="col-md-4 text-left">
+            <a href="{{ path('datasource_new') }}">Добавить город</a>
+        </div>
+    </div>
 
-            <tr style="color: deepskyblue">
-                <th>Cities</th>
-                {% for c in cities %}
-                    <td>{{ c }}</td>
-                {% endfor %}
-            </tr>
+    {#<li>
+        {{ form_start(delete_form) }}
+        <input type="submit" value="Delete">
+        {{ form_end(delete_form) }}
+    </li>#}
 
-        </tbody>
-    </table>
+    <div class="row" style="background: rgba(89, 213, 241, 0.18); border-radius: 6px; margin-top: 2%">
+        <div class = "col-md-6">
+            <table class="table table-hover">
+                <tbody>
+                <tr class="lead">
+                    <th>Источник данных</th>
+                    <th>{{ datasource.name }}</th>
+                </tr>
+                <tr>
+                    <td>Температура</td>
+                    <td>{{ datasource.temperature }} °C</td>
+                </tr>
+                <tr>
+                    <td>Широта</td>
+                    <td>{{ datasource.latitude}} </td>
+                </tr>
+                <tr>
+                    <td>Долгота</td>
+                    <td>{{ datasource.longitude }} </td>
+                </tr>
+                </tbody>
+            </table>
+            {% if(cities) %}
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr class="lead">
+                                <th>Привязанные города</th>
+                            </tr>
+                    {% for city in cities %}
+                            <tr>
+                                <td><a class="" href="{{ path('city_show', { 'id': city.id }) }}">{{ city.name }}</a> </td>
+                                <td></td>
+                            </tr>
+                    {% endfor %}
+                        </tbody>
+                    </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('datasource_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('datasource_edit', { 'id': dataSource.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+            {% else %}
+                <a class="" href="{{ path('city_edit', { 'id': city.id }) }}">Добавить источник данных</a>
+            {% endif %}
+
+
+        </div>
+        <div class="text-right" style="margin-right: 2%">
+            <img class = "img-rounded" alt="" locale="ru" src="//static-maps.yandex.ru/1.x/?ll={{ datasource.latitude }},{{ datasource.longitude }}&amp;size=450,450&amp;z=9&amp;l=map&amp;pt={{ datasource.latitude }},{{ datasource.longitude }},pmwtm1~{{ datasource.latitude }},{{ datasource.longitude }},org">
+        </div>
+    </div>
+
+    <div calss="row">
+        <a style="float: right;" href="{{ path('city_index') }}">Вернуться к списку</a>
+        <a class="text-right" href="{{ path('datasource_edit', { 'id': datasource.id }) }}">Редактировать</a>
+    </div>
 {% endblock %}
