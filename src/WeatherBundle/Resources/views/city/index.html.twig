@@ -9,7 +9,9 @@
 
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#city">Города</a></li>
+        {% if datasources is not empty %}
         <li><a data-toggle="tab" href="#datasource">Источники данных</a></li>
+        {% endif %}
     </ul>
 
     <div class="tab-content">
@@ -69,10 +71,6 @@
 
         </div>
 
-
-
-
-
         <div id="datasource" class="tab-pane fade">
             <div class = "row text-center">
                 <div id="city" class="tab-pane fade in active">
@@ -80,19 +78,11 @@
                         <div class="col-md-4 text-left">
                             <a href="{{ path('datasource_new') }}">Добавить источник данных</a>
                         </div>
-
-                        {#<div class="col-md-8 text-right">
-                            <form class="navbar-form" role="search" id="nav-search-form" method="get" action="{{ path('city_search') }}">
-                                <div class="input-group">
-                                    <input type="search" class="form-control" placeholder="Поиск города" name ="search">
-                                </div>
-                            </form>
-                        </div>#}
                     </div>
 
-                    {% if datasources %}
+                    {% if datasources is not empty%}
                     <div class = "row" style="background: rgba(89, 213, 241, 0.18); border-radius: 6px; margin-top: 2%">
-                        <table class="table table-hover">
+                        <table class="table table-hover ">
                             <thead>
                             <tr>
                                 <th>Id</th>
@@ -109,7 +99,7 @@
                                 <tr>
                                     <td>{{ ds.id }}</td>
                                     <td><a href="{{ path('datasource_show', { 'id': ds.id }) }}">{{ ds.name }}</a></td>
-                                    <td>{{ ds.temperature }}</td>
+                                    <td>{{ ds.temperature }} °C</td>
                                     <td>{{ ds.latitude}} </td>
                                     <td>{{ ds.longitude }} </td>
                                     <td>
