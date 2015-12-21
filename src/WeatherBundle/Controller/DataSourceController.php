@@ -44,7 +44,7 @@ class DataSourceController extends Controller
             $em->persist($dataSource);
             $em->flush();
 
-            return $this->redirectToRoute('datasource_show', array('id' => $datasource->getId()));
+            return $this->redirectToRoute('datasource_show', array('id' => $dataSource->getId()));
         }
 
         return $this->render('WeatherBundle:DataSource:new.html.twig', array(
