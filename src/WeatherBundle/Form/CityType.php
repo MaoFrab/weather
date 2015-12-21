@@ -30,7 +30,7 @@ class CityType extends AbstractType
             $builder
             ->add('dataSource', EntityType::class, array(
                 'label' => 'Источник данных',
-                'class' => 'WeatherBundle:dataSource',
+                'class' => 'WeatherBundle:DataSource',
                 'query_builder' => function (DataSourceRepository $er) use ($longitude, $latitude) {
                     return $ds = $er->createQueryBuilder('ds')
                         ->where(" SQRT((($longitude - ds.longitude)*($longitude - ds.longitude))
